@@ -1,37 +1,37 @@
 ﻿@page
-@model CoursesAndModulesModel
+@model UsersModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<h2>Courses and Modules</h2>
+<h2>Woodward Payment App Users</h2>
 <div>
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    Course Name
+                    User ID
                 </th>
                 <th>
-                    Modules
+                    User Name
                 </th>
                 <th>
-                    Sequence
+                    User Age
                 </th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var courseAndModule in Model.CoursesAndModules)
+            @foreach (var user in Model.Users)
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(courseName => courseAndModule.CourseName)
+                        @Html.DisplayFor(courseName => user.UserId)
                     </td>
                     <td>
-                        @Html.DisplayFor(moduleTitle => courseAndModule.ModuleTitle)
+                        @Html.DisplayFor(moduleTitle => user.UserName)
                     </td>
                     <td>
-                        @Html.DisplayFor(sequence => courseAndModule.Sequence)
+                        @Html.DisplayFor(sequence => user.UserAge)
                     </td>
                 </tr>
             }

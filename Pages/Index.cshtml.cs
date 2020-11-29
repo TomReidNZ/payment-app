@@ -14,12 +14,12 @@ namespace CoursesWebApp.Pages
         DataAccessController dac = new DataAccessController();
 
         // Create a collection for holding CoursesAndModules object
-        public List<Users> CoursesAndModules;
+        public List<Users> Users;
 
         public void OnGet()
         {
             // Retrieve the data using the DataAccessController object and populate the CoursesAndModules object
-            CoursesAndModules = dac.GetAllUsers().ToList();
+            Users = dac.GetAllUsers().ToList();
         }
     }
 }

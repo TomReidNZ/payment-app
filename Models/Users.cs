@@ -2,15 +2,15 @@
 {
     public class Users
     {
-        public string CourseName { get; }
-        public string ModuleTitle { get; }
-        public int Sequence { get; }
+        public string UserId { get; }
+        public string UserName { get; }
+        public int UserAge { get; }
 
-        public Users(string courseName, string moduleTitle, int sequence)
+        public Users(string userId, string userName, int userAge)
         {
-            this.CourseName = courseName;
-            this.ModuleTitle = moduleTitle;
-            this.Sequence = sequence;
+            this.UserId = userId;
+            this.UserName = userName;
+            this.UserAge = userAge;
         }
     }
 }
