@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
+using Npgsql;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,24 +10,33 @@ namespace CoursesWebApp.Models
 {
     public class DataAccessController
     {
-        // TODO: Add your connection string in the following statements
-        private string connectionString = "<Azure SQL Database Connection String>";
+        // Add your connection string in the following statements
+        string connectionString = "Server=payment-server-demo.postgres.database.azure.com;Database=paymentapp;Port=5432;User Id=paymentadmin@payment-server-demo;Password=Paymentapp69;Ssl Mode=Require;";
 
         // Retrieve all details of courses and their modules    
         public IEnumerable<CoursesAndModules> GetAllCoursesAndModules()
         {
             List<CoursesAndModules> courseList = new List<CoursesAndModules>();
 
-            // TODO: Connect to the database
-            //using ()
+            // Connect to the database
+            using (var conn = new NpgsqlConnection(connectionString))
+
             {
-                // TODO: Specify the SQL query to run
-                
-                // TODO: Execute the query
-                
-                // TODO: Read the data a row at a time
-                
-                // TODO: Close the database connection
+                Console.Out.WriteLine("Opening connection");
+                conn.Open();
+                using (var command = new NpgsqlCommand("SELECT * FROM users", conn))
+                {
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        string userID = reader.GetInt32(0).ToString();
+                        string userName = reader.GetString(1);
+                        int moduleSequence = reader.GetInt32(2);
+                        CoursesAndModules course = new CoursesAndModules(userID, userName, moduleSequence);
+                        courseList.Add(course);
+                    }
+                }
+                conn.Close();
             }
             return courseList;
         }
