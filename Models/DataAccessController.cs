@@ -14,9 +14,9 @@ namespace CoursesWebApp.Models
         string connectionString = "Server=payment-server-demo.postgres.database.azure.com;Database=paymentapp;Port=5432;User Id=paymentadmin@payment-server-demo;Password=Paymentapp69;Ssl Mode=Require;";
 
         // Retrieve all details of courses and their modules    
-        public IEnumerable<CoursesAndModules> GetAllCoursesAndModules()
+        public IEnumerable<Users> GetAllUsers()
         {
-            List<CoursesAndModules> courseList = new List<CoursesAndModules>();
+            List<Users> userList = new List<Users>();
 
             // Connect to the database
             using (var conn = new NpgsqlConnection(connectionString))
@@ -32,13 +32,13 @@ namespace CoursesWebApp.Models
                         string userID = reader.GetInt32(0).ToString();
                         string userName = reader.GetString(1);
                         int moduleSequence = reader.GetInt32(2);
-                        CoursesAndModules course = new CoursesAndModules(userID, userName, moduleSequence);
-                        courseList.Add(course);
+                        Users user = new Users(userID, userName, moduleSequence);
+                        userList.Add(user);
                     }
                 }
                 conn.Close();
             }
-            return courseList;
+            return userList;
         }
     }
 }
