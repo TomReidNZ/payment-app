@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CoursesWebApp.Models;
+using PaymentUsersApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace CoursesWebApp.Pages
+namespace PaymentUsersApp.Pages
 {
     public class UsersModel : PageModel
     {

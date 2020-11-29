@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace CoursesWebApp.Pages
+namespace PaymentUsersApp.Pages
 {
     public class PrivacyModel : PageModel
     {

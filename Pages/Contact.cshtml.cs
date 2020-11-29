@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace CoursesWebApp.Pages
+namespace PaymentUsersApp.Pages
 {
     public class ContactModel : PageModel
     {

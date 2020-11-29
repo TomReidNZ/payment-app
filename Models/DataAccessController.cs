@@ -6,7 +6,7 @@ using Npgsql;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CoursesWebApp.Models
+namespace PaymentUsersApp.Models
 {
     public class DataAccessController
     {

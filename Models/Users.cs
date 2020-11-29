@@ -1,4 +1,4 @@
-﻿namespace CoursesWebApp.Models
+﻿namespace PaymentUsersApp.Models
 {
     public class Users
     {
